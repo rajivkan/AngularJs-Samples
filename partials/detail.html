@@ -1,0 +1,14 @@
+<div>
+	<h1>Student Details:</h1>
+	<br>
+	Name: {{detail.name}}
+	<br>
+	<table>
+		<tr>
+			<td>Course</td>
+		</tr>
+		<tr ng-repeat="x in detail.course">
+			<td>{{x.name}}</td>
+		</tr>
+	</table>
+</div>

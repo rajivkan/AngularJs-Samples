@@ -1,0 +1,32 @@
+{
+
+	"student": [
+			{
+				"StudentId": 1,
+				"name": "Rajesh",
+				"address": "Bangalore",
+				"course": [
+					{"name": "Computer"},
+					{"name": "Science"}
+				]
+			},
+			{
+				"StudentId": 2,
+				"name": "Sanjay",
+				"address": "Delhi",
+				"course": [
+					{"name": "Maths"},
+					{"name": "Science"}
+				]
+			},
+			{
+				"StudentId": 3,
+				"name": "Ajay",
+				"address": "Mumbai",
+				"course": [
+					{"name": "History"},
+					{"name": "Art"}
+				]
+			}
+	]
+}

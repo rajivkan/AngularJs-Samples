@@ -1,0 +1,19 @@
+<div>
+	{{message}}
+
+	{{getMessage()}}
+
+	<table>
+		<tr>
+			<td>Id</td>
+			<td>Name</td>
+			<td>Address</td>
+		</tr>
+		<tr ng-repeat="x in studentData">
+			<td><a href="#/detail/{{x.StudentId}}"> {{x.StudentId}}</a></td>
+			<td>{{x.name}}</td>
+			<td>{{x.address}}</td>
+		</tr>
+	</table>
+	
+</div>
