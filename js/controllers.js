@@ -7,27 +7,28 @@ trainingControllers.controller('homeViewCtrl', ['$scope', '$http', '$rootScope',
         }, function(err){
           console.log(err);
         });
-        // $http.get('data/data.json')
-        // .success(function(result){
-        //   $scope.studentData = result.student;
-        //   _studentData = $scope.studentData;
-        // })
-        // .error(function(error){
 
-        // });
         $scope.message = "Welcome to Angular JS";
-        //$rootScope.$broadcast('parent', 'Some data');
+
+        //$rootScope.$broadcast('test', {name: "AYX"});
         $scope.getMessage = function(){
         	return "Test Message";
         }
+
+        window.addEventListener("ABOUT_EVENT", function(event){
+          debugger;
+        });
 }]);
 
 trainingControllers.controller('aboutViewCtrl', ['$scope', '$http', '$rootScope', '$routeParams',
     function ($scope, $http, $rootScope, $routeParams) {
-   //     $rootScope.$on('parent', function (event, data) {
-   //     	alert(data);
-	  //   console.log(data); // 'Some data'
-	  // });
+     //   $rootScope.$on('test', function (event, data) {
+     //     	alert(data.name);
+  	  //   console.log(data);
+  	  // });
+      var evt = new CustomEvent("ABOUT_EVENT");
+      evt.test = {name: "ABC"};
+      window.dispatchEvent(evt);
 }]);
 
 trainingControllers.controller('contactViewCtrl', ['$scope', '$http', '$rootScope', '$routeParams',
@@ -35,9 +36,13 @@ trainingControllers.controller('contactViewCtrl', ['$scope', '$http', '$rootScop
   
 }]);
 
-trainingControllers.controller('menuController', ['$scope', '$http', '$routeParams',
-    function ($scope, $http, $routeParams) {
+trainingControllers.controller('menuController', ['$scope', '$http', '$routeParams', '$location',
+    function ($scope, $http, $routeParams, $location) {
        $scope.menuItems = [{name:'Home', link: '#/'}, {name: 'About', link: '#/about'}, {name: 'Contact', link: '#/contact'}];
+       $scope.loadContact = function(){
+          //$location.path("/contact");
+          window.location.href = "#/contact";
+      }
 }]);
 
 trainingControllers.controller('detailViewCtrl', ['$scope', '$http', '$routeParams', "studentModel",
