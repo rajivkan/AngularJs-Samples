@@ -19,6 +19,10 @@ trainingApp.config(['$routeProvider', '$controllerProvider',
             .when('/detail/:id', {
                 templateUrl: 'partials/detail.html',
                 controller: 'detailViewCtrl'
+            })
+            .when('/login', {
+                templateUrl: 'partials/login.html',
+                controller: 'loginViewCtrl'
             });
     }
 ]);

@@ -1,6 +1,7 @@
 var trainingControllers = angular.module('trainingControllers', []);
 trainingControllers.controller('homeViewCtrl', ['$scope', '$http', '$rootScope', '$routeParams', "trainingService", "studentModel",
     function ($scope, $http, $rootScope, $routeParams, trainingService, studentModel) {
+        
         trainingService.retrieve('data/data.json').then(function(result){
           $scope.studentData = result.student;
           studentModel.setStudents($scope.studentData);
@@ -33,12 +34,19 @@ trainingControllers.controller('aboutViewCtrl', ['$scope', '$http', '$rootScope'
 
 trainingControllers.controller('contactViewCtrl', ['$scope', '$http', '$rootScope', '$routeParams',
     function ($scope, $http, $rootScope, $routeParams) {
-  
+    // trainingService.retrieve('data/contact.json').then(function(result){
+      
+    // });
+}]);
+
+trainingControllers.controller('loginViewCtrl', ['$scope', '$http', '$rootScope', '$routeParams',
+    function ($scope, $http, $rootScope, $routeParams) {
+   
 }]);
 
 trainingControllers.controller('menuController', ['$scope', '$http', '$routeParams', '$location',
     function ($scope, $http, $routeParams, $location) {
-       $scope.menuItems = [{name:'Home', link: '#/'}, {name: 'About', link: '#/about'}, {name: 'Contact', link: '#/contact'}];
+       $scope.menuItems = [{name:'Home', link: '#/'}, {name: 'About', link: '#/about'}, {name: 'Contact', link: '#/contact'}, {name: 'Login', link: '#/login'}];
        $scope.loadContact = function(){
           //$location.path("/contact");
           window.location.href = "#/contact";
