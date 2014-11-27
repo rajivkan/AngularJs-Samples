@@ -64,3 +64,20 @@ trainingControllers.controller('detailViewCtrl', ['$scope', '$http', '$routePara
        }
 }]);
 
+trainingControllers.controller('exampleController', ['$scope', '$http', '$rootScope', '$routeParams',
+    function ($scope, $http, $rootScope, $routeParams) {
+      $scope.name = "Pratap";
+      $scope.nameList=[
+              {name:'Jani',country:'Norway'},
+              {name:'Hege',country:'Sweden'},
+              {name:'Kai',country:'Denmark'}];
+      $scope.master = {firstName: "Ajay", lastName: "Kumar"};
+      $scope.reset = function() {
+          $scope.user = angular.copy($scope.master);
+      };
+      $scope.reset();
+
+      $scope.username = "Pratap";
+      $scope.email = "Pratap@gmail.com";
+}]);
+

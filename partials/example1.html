@@ -1,0 +1,60 @@
+<div>
+	<input ng-model="name" type="text">
+	<label> {{name}} </label>
+</div>
+
+<div ng-init="person={firstName:'John',lastName:'Doe'}">
+
+<p>The name is {{person.lastName}}</p>
+
+</div>
+
+<div>
+<input ng-model="nameTxt">
+<ul>
+  <li ng-repeat="x	in nameList | filter:nameTxt">
+    {{ x.name + ', ' + x.country }}
+  </li>
+</ul>
+</div>
+
+
+<div>
+  <form novalidate>
+    First Name:<br>
+    <input type="text" ng-model="user.firstName"><br>
+    Last Name:<br>
+    <input type="text" ng-model="user.lastName">
+    <br><br>
+    <button ng-click="reset()">RESET</button>
+  </form>
+  <p>form = {{user}}</p>
+  <p>master = {{master}}</p>
+</div>
+
+
+<form
+name="myForm" novalidate>
+
+<p>Username:<br>
+  <input type="text" name="usernameTxt" ng-model="username" required>
+  <span style="color:red" ng-show="myForm.usernameTxt.$dirty && myForm.usernameTxt.$invalid">
+  <span ng-hide="!myForm.usernameTxt.$error.required">Username is required.</span>
+  </span>
+</p>
+
+<p>Email:<br>
+  <input type="email" name="email" ng-model="email" required>
+  <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+  <span ng-show="myForm.email.$error.required">Email is required.</span>
+  <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+  </span>
+</p>
+
+<p>
+  <input type="submit"
+  ng-disabled="myForm.usernameTxt.$dirty && myForm.usernameTxt.$invalid ||
+  myForm.email.$dirty && myForm.email.$invalid">
+</p>
+
+</form>
