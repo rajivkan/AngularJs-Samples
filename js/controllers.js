@@ -2,7 +2,7 @@ var trainingControllers = angular.module('trainingControllers', []);
 trainingControllers.controller('homeViewCtrl', ['$scope', '$http', '$rootScope', '$routeParams', "trainingService", "studentModel",
     function ($scope, $http, $rootScope, $routeParams, trainingService, studentModel) {
         
-        trainingService.retrieve('data/data.json').then(function(result){
+        trainingService.retrieve('data/data.json', 'GET').then(function(result){
           $scope.studentData = result.student;
           studentModel.setStudents($scope.studentData);
         }, function(err){
