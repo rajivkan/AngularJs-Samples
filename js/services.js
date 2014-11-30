@@ -13,7 +13,7 @@ angular.module('trainingServices', [])
              data: { test: 'test' },
             }
 
-	        $http(req).success(
+	        $http.get(url).success(
             function(data) {
                 d.resolve(data);
             }).

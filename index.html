@@ -3,6 +3,7 @@
 <head>
 	<title>Welcome to HTML5</title>
 	<link href="css/main.css" rel="stylesheet">
+	<SCRIPT TYPE="text/javascript" src="js/lib/jquery-1.11.1.js"></SCRIPT>
 	<SCRIPT TYPE="text/javascript" src="js/lib/angular.min.js"></SCRIPT>
 	<SCRIPT TYPE="text/javascript" src="js/lib/angular-route.min.js"></SCRIPT>
 	<SCRIPT TYPE="text/javascript" src="js/lib/underscore.js"></SCRIPT>
@@ -11,6 +12,20 @@
 	<script TYPE="text/javascript" src="js/directives/training_directives.js"></script> 
 	<SCRIPT TYPE="text/javascript" src="js/model/student.js"></SCRIPT>
 	<SCRIPT TYPE="text/javascript" src="js/controllers.js"></SCRIPT>
+
+	<script type="text/javascript">
+	$(window).load(function(){
+		// $.each($(".lbl"), function(index, item){
+		// 	$(item).html("Label jQuery "+ index);
+		// });
+
+		for(var i=0; i < document.getElementsByClassName("lbl").length; i++){
+			var item = document.getElementsByClassName("lbl")[i];
+			item.innerHTML = "LAbel "+ i;
+		}
+	});
+		
+	</script>
 </head>
 
 <body>
@@ -36,5 +51,13 @@
 		</tr>
 	</table>
 	
+
+<br>
+<br>
+<br>
+
+<label id="lbl1" class="lbl">Label 1</label><br>
+<label id="lbl1" class="lbl">Label 2</label><br>
+<label id="lbl1" class="lbl">Label 3</label>
 </body>
 </html>
